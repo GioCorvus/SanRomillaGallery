@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    position: relative; /* Ensure the body is positioned relatively */
+    color: white;
+    background-image: url('src/img/bg.jpg'); /* Mover el fondo al cuerpo */
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Set a higher z-index to ensure the header appears above the background image */
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+hr {
+    width: 50%;
+    margin: auto;
+    border: none;
+    border-top: 1px solid white;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px; /* Ajusta este valor según tu preferencia */
+    left: 20px; /* Ajusta este valor según tu preferencia */
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: transform 0.3s ease; /* Agregamos una transición para el cambio de posición */
+}
+
+/* Alinear las tres barras horizontalmente */
+.burger {
+    display: block;
+}
+
+/* Aplicar espaciado entre las barras */
+.burger + .burger {
+    margin-top: 5px;
+}
+
+/* Rotar la primera y la tercera línea al hacer clic */
+.menu-toggle.active .burger:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .burger:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .burger:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu {
+    position: fixed;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    z-index: 1000; /* Agregamos un z-index para asegurarnos de que el menú aparezca sobre otros elementos */
+}
+
+.menu.active {
+    left: 0; /* Mostrar el menú cuando la clase active está presente */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px 0;
+    text-align: center;
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.menu ul li:hover {
+    transform: scale(1.1); /* Increase the scale on hover */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.gallery {
+    margin:0px 500px 0px 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.gallery img {
+    max-width: 200px; /* Set maximum width */
+    max-height: 200px; /* Set maximum height */
+    margin: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 10px;
+    filter: grayscale(80%); /* Remove grayscale filter on hover */
+
+}
+
+.gallery img:hover {
+    transform: scale(1.9); /* Increase the scale */
+    z-index: 1; /* Bring the hovered image to the front */
+    filter: grayscale(0%); /* Remove grayscale filter on hover */
+}
+
+footer {
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1005;
+}
+
+.iconos-redes-sociales {
+    margin-top: 20px;
+}
+
+.iconos-redes-sociales a {
+    color: yellow; /* Cambia el color de los iconos a amarillo */
+    margin: 0 10px;
+    font-size: 24px; /* Ajusta el tamaño de los iconos según sea necesario */
+    transition: color 0.3s; /* Agrega una transición para suavizar el cambio de color */
+}
+
+.iconos-redes-sociales a:hover {
+    color: gold; /* Cambia el color al pasar el mouse sobre los iconos */
+}
